@@ -17,6 +17,8 @@ service Calculator {
   
   // Division operation
   rpc Divide (CalculationRequest) returns (CalculationReply);
+  
+  rpc Modulus (CalculationRequest) returns (CalculationReply);
 }
 
 // The request message containing two numbers for calculation.

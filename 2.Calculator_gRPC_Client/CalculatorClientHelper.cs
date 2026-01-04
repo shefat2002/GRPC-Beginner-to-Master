@@ -25,6 +25,7 @@ namespace CalculatorGrpcClient
                     "subtract" or "2" => await client.SubtractAsync(request),
                     "multiply" or "3" => await client.MultiplyAsync(request),
                     "divide" or "4" => await client.DivideAsync(request),
+                    "modulus" or "5" => await client.ModulusAsync(request),
                     _ => throw new ArgumentException($"Invalid operation: {operation}")
                 };
 

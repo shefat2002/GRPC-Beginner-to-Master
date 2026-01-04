@@ -7,7 +7,7 @@ CalculatorClientHelper.DisplayInstructions();
 
 while (true)
 {
-    Console.Write("Enter operation (1-4, operation name, or 'q' to quit): ");
+    Console.Write("Enter operation (1-5, operation name, or 'q' to quit): ");
     var operation = Console.ReadLine()?.Trim();
     
     if (string.IsNullOrWhiteSpace(operation) || operation.ToLower() == "q")
@@ -19,7 +19,7 @@ while (true)
     // Validate operation
     if (!IsValidOperation(operation))
     {
-        Console.WriteLine("Invalid operation. Please enter 1-4 or add/subtract/multiply/divide.");
+        Console.WriteLine("Invalid operation. Please enter 1-5 or add/subtract/multiply/divide/modulus.");
         continue;
     }
 
@@ -52,6 +52,6 @@ while (true)
 
 static bool IsValidOperation(string operation)
 {
-    var validOperations = new[] { "1", "2", "3", "4", "add", "subtract", "multiply", "divide" };
+    var validOperations = new[] { "1", "2", "3", "4", "5", "add", "subtract", "multiply", "divide", "modulus" };
     return validOperations.Contains(operation.ToLower());
 }

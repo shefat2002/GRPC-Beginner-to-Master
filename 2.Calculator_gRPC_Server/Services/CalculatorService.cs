@@ -1,8 +1,7 @@
-using Grpc.Core;
 using CalculatorGrpcServer;
-using Microsoft.Extensions.Logging;
+using Grpc.Core;
 
-namespace CalculatorGrpcServer.Services;
+namespace _2.Calculator_gRPC_Server.Services;
 
 public class CalculatorService : Calculator.CalculatorBase
 {
@@ -77,6 +76,18 @@ public class CalculatorService : Calculator.CalculatorBase
         {
             Result = result,
             Message = $"{request.FirstNumber} / {request.SecondNumber} = {result}",
+            Success = true
+        });
+    }
+
+    public override Task<CalculationReply> Modulus(CalculationRequest request, ServerCallContext context)
+    {
+        _logger.LogWarning($"Calculating modulus of {request.FirstNumber} % {request.SecondNumber}");
+        var result = request.FirstNumber % request.SecondNumber;
+        return Task.FromResult(new CalculationReply
+        {
+            Result = result,
+            Message = $"{request.FirstNumber} % {request.SecondNumber} = {result}",
             Success = true
         });
     }

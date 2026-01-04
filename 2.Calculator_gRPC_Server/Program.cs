@@ -1,4 +1,4 @@
-﻿using CalculatorGrpcServer.Services;
+﻿using _2.Calculator_gRPC_Server.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
