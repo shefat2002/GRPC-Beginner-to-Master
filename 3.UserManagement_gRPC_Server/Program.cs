@@ -1,5 +1,5 @@
+using _3.UserManagement_gRPC_Server.Services;
 using _3.UserManagement_gRPC_Server.Storage;
-using UserManagementGrpcServer.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

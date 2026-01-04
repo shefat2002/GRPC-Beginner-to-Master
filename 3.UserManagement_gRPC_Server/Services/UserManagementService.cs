@@ -1,9 +1,10 @@
-using Grpc.Core;
-using UserManagementGrpcServer.Models;
 using System.ComponentModel.DataAnnotations;
 using _3.UserManagement_gRPC_Server.Storage;
+using Grpc.Core;
+using UserManagementGrpcServer;
+using UserManagementGrpcServer.Models;
 
-namespace UserManagementGrpcServer.Services;
+namespace _3.UserManagement_gRPC_Server.Services;
 
 public class UserManagementService : UserManagement.UserManagementBase
 {

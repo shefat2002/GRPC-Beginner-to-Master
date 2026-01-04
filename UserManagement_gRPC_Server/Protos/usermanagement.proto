@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserManagement_gRPC_Server";
+
+package usermanagement;
+
+service UserManagement{
+  rpc CreateUser (CreateUserRequest) returns (UserReply);
+  rpc GetUser (GetUserRequest) returns (UserReply);
+  rpc GetAllUsers (GetAllUsersRequest) returns (UserReply);
+  rpc UpdateUser (UpdateUserRequest) returns (UserReply);
+  rpc DeleteUser (DeleteUserRequest) returns (DeleteUserReply);
+}
+
+message CreateUserRequest{
+  string name = 1;
+  int32 age = 2;
+  string phone = 3;
+  string address = 4;
+}
+
+message GetUserRequest{
+  int32 id = 1;
+}
+
+message GetAllUsersRequest{
+ int32 page = 1;
+ string filter = 2;
+}
+
+message UpdateUserRequest{
+  int32 id = 1;
+  string name = 2;
+  int32 age = 3;
+  string phone = 4;
+  string address = 5;
+}
+
+message DeleteUserRequest{
+  int32 id = 1;
+}
+
+message User{
+  int32 id = 1;
+  string name = 2;
+  int32 age = 3;
+  string phone = 4;
+  string address = 5;
+  string created_at = 6;
+  string updated_at = 7;
+}
+
+message UserReply{
+  User user = 1;
+  string message = 2;
+  bool success = 3;
+}
+
+message DeleteUserReply{
+  string message = 1;
+  bool success = 2;
+}
