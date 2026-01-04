@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+option csharp_namespace = "CalculatorGrpcClient";
+
+package calculator;
+
+// The calculator service definition.
+service Calculator {
+  // Addition operation
+  rpc Add (CalculationRequest) returns (CalculationReply);
+  
+  // Subtraction operation
+  rpc Subtract (CalculationRequest) returns (CalculationReply);
+  
+  // Multiplication operation
+  rpc Multiply (CalculationRequest) returns (CalculationReply);
+  
+  // Division operation
+  rpc Divide (CalculationRequest) returns (CalculationReply);
+}
+
+// The request message containing two numbers for calculation.
+message CalculationRequest {
+  double first_number = 1;
+  double second_number = 2;
+}
+
+// The response message containing the calculation result.
+message CalculationReply {
+  double result = 1;
+  string message = 2;
+  bool success = 3;
+}
